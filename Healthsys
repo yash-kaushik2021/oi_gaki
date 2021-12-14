@@ -1,0 +1,113 @@
+def getdate():
+    import datetime
+    return datetime.datetime.now()
+
+
+strr = "Do you want to Log/Retrieve again (y/n)\n"
+strr2 = "Do you want to select person again (y/n)\n"
+comsume = "What did you consume?\n"
+exercise = "What exercise did you do?\n"
+dE = "Diet(0) or Exercise(1)"
+dt = getdate()
+nt = ".\n"
+print("Welcome to Health Management system")
+while True:
+    Name = int(input("Who's data would you like to access?\nShubham(0), Yash(1), Sangwan(2)\n"))
+    while True:
+        if Name == 1:
+            while True:
+                Access = int(input("Do you want to Log(0) or Retrieve(1)?\n"))
+                if Access == 0:
+                    print(dE)
+                    ftype = int(input())
+                    if ftype == 0:
+                        a1 = input(comsume)
+                        with open("yfood.txt", "a") as f:
+                            f.write(str(dt) + " " + str(a1) + nt)
+                    elif ftype == 1:
+                        a2 = input(exercise)
+                        with open("yexe.txt", "a") as f:
+                            f.write(str(dt) + " " + str(a2) + nt)
+                elif Access == 1:
+                    print(dE)
+                    etype = int(input())
+                    if etype == 0:
+                        with open("yfood.txt") as f:
+                            a = f.read()
+                            print(a)
+                    elif etype == 1:
+                        with open("yexe.txt") as f:
+                            b = f.read()
+                            print(b)
+                rr = input(strr)
+                if rr == "y":
+                    continue
+                elif rr == "n":
+                    break
+        elif Name == 0:
+            while True:
+                Access = int(input("Do you want to Log(0) or Retrieve(1)?\n"))
+                if Access == 0:
+                    print(dE)
+                    ftype2 = int(input())
+                    if ftype2 == 0:
+                        b1 = input(comsume)
+                        with open("sfood.txt", "a") as f:
+                            f.write(str(dt) + " " + str(b1) + nt)
+                    elif ftype2 == 1:
+                        b2 = input(exercise)
+                        with open("sexe.txt", "a") as f:
+                            f.write(str(dt) + " " + str(b2) + nt)
+                elif Access == 1:
+                    print(dE)
+                    etype2 = int(input())
+                    if etype2 == 0:
+                        with open("sfood.txt") as f:
+                            c = f.read()
+                            print(c)
+                    elif etype2 == 1:
+                        with open("sexe.txt") as f:
+                            d = f.read()
+                            print(d)
+                rr2 = input(strr)
+                if rr2 == "y":
+                    continue
+                elif rr2 == "n":
+                    break
+        elif Name == 2:
+            while True:
+                Access = int(input("Do you want to Log(0) or Retrieve(1)?\n"))
+                if Access == 0:
+                    print(dE)
+                    ftype3 = int(input())
+                    if ftype3 == 0:
+                        c1 = input(comsume)
+                        with open("sanfood.txt", "a") as f:
+                            f.write(str(dt) + " " + str(c1) + nt)
+                    elif ftype3 == 1:
+                        c2 = input(exercise)
+                        with open("sanexe.txt", "a") as f:
+                            f.write(str(dt) + " " + str(c2) + nt)
+                elif Access == 1:
+                    print(dE)
+                    etype3 = int(input())
+                    if etype3 == 0:
+                        with open("sanfood.txt") as f:
+                            z = f.read()
+                            print(z)
+                    elif etype3 == 1:
+                        with open("sanexe.txt") as f:
+                            x = f.read()
+                            print(x)
+                rr3 = input(strr)
+                if rr3 != "y":
+                    break
+                else:
+                    continue
+        rrf = input(strr2)
+        if rrf == "y":
+            continue
+        elif rrf == "n":
+            break
+    print("Thank you for accessing the system")
+    break
